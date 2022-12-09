@@ -10,17 +10,17 @@ const routes: Routes = [
       ),
   },
   {
-    path: 'weatherForecast/:country/:state',
+    path: ':country/:state',
     loadChildren: () =>
       import(
         './@modules/weather-tracker/weather-tracker/weather-tracker.module'
       ).then((m) => m.WeatherTrackerModule),
   },
   {
-    path:'',
-    redirectTo:'map',
-    pathMatch:'full'
-  }
+    path: '',
+    redirectTo: 'map',
+    pathMatch: 'full',
+  },
 ];
 
 @NgModule({

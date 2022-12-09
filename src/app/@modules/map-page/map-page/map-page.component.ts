@@ -50,7 +50,7 @@ export class MapPageComponent implements OnInit {
       });
   }
   navigateToWeatherPage(country: string, state: string) {
-    this.router.navigate([`/weatherForecast/${country}/${state}`]);
+    this.router.navigate([`${country}/${state}`]);
   }
 
   createFormControls() {
