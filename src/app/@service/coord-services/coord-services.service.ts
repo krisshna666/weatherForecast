@@ -10,21 +10,23 @@ export class CoordServicesService {
   getCoords(place: string) {
     return this.http
       .get(
-        `https://api.mapbox.com/geocoding/v5/mapbox.places/${place}.json?proximity=ip&types=country&access_token=pk.eyJ1IjoibXVrdWwwNTk2IiwiYSI6ImNqdzF4empkczBvczkzenBzOWxpZTJrdzAifQ.skvI3yfkPhyRI9upXgU5tA`
+        `https://api.mapbox.com/geocoding/v5/mapbox.places/${place}.json?proximity=ip&types=country`
       )
       .pipe(debounce(() => timer(10000)));
   }
   getCountriesAndStates() {
-    return this.http.get('../../assets/countriesList.json');
+    return this.http.get(
+      'https://krisshna666.github.io/weatherForecast/assets/countriesList.json'
+    );
   }
   getWeatherDetails(city: string) {
     return this.http.get(
-      `http://api.weatherapi.com/v1/current.json?key=58e9336973e94619bc1100938220912&q=${city}&aqi=no`
+      `https://api.weatherapi.com/v1/current.json?q=${city}&aqi=no`
     );
   }
   getDailyWeatherForecast(city: string, params: any) {
     return this.http.get(
-      `https://api.weatherapi.com/v1/forecast.json?key=58e9336973e94619bc1100938220912&q=${city}`,
+      `https://api.weatherapi.com/v1/forecast.json?q=${city}`,
       { params: params }
     );
   }

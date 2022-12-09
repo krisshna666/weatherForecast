@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { MapPageComponent } from './map-page.component';
 import { MapPageRoutingModule } from './map-page-routing.module';
 import { AgmCoreModule } from '@agm/core';
-import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CoordServicesService } from 'src/app/@service/coord-services/coord-services.service';
 import { NgxSpinnerModule } from 'ngx-spinner';
@@ -12,7 +11,6 @@ import { NgxSpinnerModule } from 'ngx-spinner';
   imports: [
     CommonModule,
     MapPageRoutingModule,
-    HttpClientModule,
     NgxSpinnerModule,
     FormsModule,
     ReactiveFormsModule,

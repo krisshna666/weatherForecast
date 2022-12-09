@@ -70,6 +70,7 @@ export class MapPageComponent implements OnInit {
   get formControlValues() {
     return this.stateAndCountryForm.controls;
   }
+
   getStateList(countryValue: string) {
     console.log(countryValue);
     this.stateList = this.countriesList.filter((res) => {
