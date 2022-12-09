@@ -1,4 +1,4 @@
-<div>
+<div class="container-fluid">
   <div class="formSection">
     <form
       class="formField"
@@ -18,10 +18,12 @@
       </select>
       <!-- <input type="text" /> -->
       <select formControlName="state" class="form-control">
-        <option value="" disabled selected>select any state</option>
-        <option *ngFor="let i of stateList[0]?.states">
-          {{ i }}
-        </option>
+        <optgroup>
+          <option value="" disabled selected>select any state</option>
+          <option *ngFor="let i of stateList[0]?.states">
+            {{ i }}
+          </option>
+        </optgroup>
       </select>
       <!-- <input
         class="form-control"

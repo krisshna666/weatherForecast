@@ -1,10 +1,17 @@
 .container-fluid{
     background-image:url("https://images.pexels.com/photos/695657/pexels-photo-695657.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
     width: 100%;
     height:auto;
 h2{
     text-align:center;
     color: white;
+}
+.fa-arrow-left{
+  font-size: 2em;
+  margin: 20px 0;
+  cursor: pointer;
 }
 img{
 

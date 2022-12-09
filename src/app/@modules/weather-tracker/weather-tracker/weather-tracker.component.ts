@@ -6,6 +6,7 @@ import {
   QueryList,
   ViewChildren,
 } from '@angular/core';
+import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { NgxSpinner, NgxSpinnerService } from 'ngx-spinner';
 import { CoordServicesService } from 'src/app/@service/coord-services/coord-services.service';
@@ -38,6 +39,7 @@ export class WeatherTrackerComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private weatherService: CoordServicesService,
     private http: HttpClient,
+    private location: Location,
     private spinner: NgxSpinnerService
   ) {
     this.spinner.show();
@@ -57,6 +59,9 @@ export class WeatherTrackerComponent implements OnInit {
         ele.nativeElement.style.background = 'none';
       }
     });
+  }
+  navigateBack() {
+    this.location.back();
   }
   ngOnInit(): void {}
 }

@@ -2,6 +2,9 @@
   class="container-fluid"
   *ngIf="currentWeatherDetails && weatherDayDetail.length > 0"
 >
+  <div (click)="navigateBack()">
+    <i class="fa fa-arrow-left" aria-hidden="true"></i>
+  </div>
   <h2>
     {{ currentWeatherDetails?.location?.name }},{{
       currentWeatherDetails?.location?.region
