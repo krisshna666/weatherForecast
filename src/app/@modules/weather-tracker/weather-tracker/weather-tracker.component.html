@@ -1,0 +1,55 @@
+<div
+  class="container-fluid"
+  *ngIf="currentWeatherDetails && weatherDayDetail.length > 0"
+>
+  <h2>
+    {{ currentWeatherDetails?.location?.name }},{{
+      currentWeatherDetails?.location?.region
+    }}
+  </h2>
+  <div class="currentWeatherDetails">
+    <div class="temp">
+      <img src="{{ currentWeatherDetails?.current?.condition?.icon }}" />
+      <div>
+        <div class="tempFont">Current temp in &#8451;</div>
+        <h1>{{ currentWeatherDetails?.current?.temp_c }}&#8451;</h1>
+      </div>
+    </div>
+  </div>
+  <div class="otherDetails">
+    <div class="col1">
+      <h4>Condition</h4>
+      <div>{{ currentWeatherDetails?.current?.condition?.text }}</div>
+    </div>
+
+    <div class="col2">
+      <h4>Speed of wind(kmph)</h4>
+      <div>{{ currentWeatherDetails?.current?.wind_kph }}</div>
+    </div>
+    <div class="col3">
+      <h4>Speed of wind(mph)</h4>
+      <div>{{ currentWeatherDetails?.current?.wind_mph }}</div>
+    </div>
+    <div class="col4">
+      <h4>Feels like in &#8451;</h4>
+      <div>{{ currentWeatherDetails?.current?.wind_mph }}</div>
+    </div>
+    <div class="col5">
+      <h4>Descriptors</h4>
+      <div>{{ currentWeatherDetails?.current?.condition?.text }}</div>
+    </div>
+  </div>
+  <div class="dailyForecast">
+    <div *ngFor="let i of weatherDayDetail; let j = index">
+      <div class="forecastBox" #nameItem (mouseenter)="highlightReports(j)">
+        <div class="timeRecorded">
+          {{ i?.time | date : "shortTime" }}
+        </div>
+        <img src="{{ i?.condition?.icon }}" />
+        <div>
+          Descriptors : <span>{{ i?.condition?.text }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

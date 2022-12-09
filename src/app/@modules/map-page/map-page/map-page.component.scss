@@ -1,0 +1,52 @@
+
+agm-map{
+    width:1000px;
+    height:500px;
+   
+}
+.mapSection{
+ 
+
+display: flex;
+justify-content: center;
+    padding: 20px;
+}
+form{
+width: 50%;
+min-width: 600px;
+margin: auto;
+text-align: center;
+display: flex;
+justify-content: center;
+gap:10px;
+padding: 20px;
+border-radius: 50px;
+
+}
+
+.formSection{
+    margin:40px 0 0 0;
+}
+@media screen and (max-width:1000px){
+    agm-map{
+        width:680px !important;
+        height:700px;
+       
+    }
+}
+@media screen and(max-width:700px){
+    agm-map{
+        width:500px !important;
+        height:700px;
+       
+    }
+    .mapSection{
+        display: flex;
+justify-content: center;
+
+    }
+    .formSection{
+        width: 600px;
+        margin:40px 0 0 0;
+    }
+}

@@ -1,0 +1,42 @@
+<div>
+  <div class="formSection">
+    <form
+      class="formField"
+      [formGroup]="stateAndCountryForm"
+      (ngSubmit)="
+        navigateToWeatherPage(
+          formControlValues.country.value,
+          formControlValues.state.value
+        )
+      "
+    >
+      <select class="form-control" formControlName="country">
+        <option value="" disabled selected>select a country</option>
+        <option *ngFor="let i of countriesList">
+          {{ i.country | lowercase }}
+        </option>
+      </select>
+      <!-- <input type="text" /> -->
+      <select formControlName="state" class="form-control">
+        <option value="" disabled selected>select any state</option>
+        <option *ngFor="let i of stateList[0]?.states">
+          {{ i }}
+        </option>
+      </select>
+      <!-- <input
+        class="form-control"
+    
+     
+        type="text"
+      /> -->
+      <button [disabled]="stateAndCountryForm.invalid" class="btn btn-primary">
+        See weather Forecast
+      </button>
+    </form>
+    <div class="mapSection">
+      <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+        <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker
+      ></agm-map>
+    </div>
+  </div>
+</div>
