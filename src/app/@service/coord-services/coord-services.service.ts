@@ -7,10 +7,11 @@ import { debounce, debounceTime } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class CoordServicesService {
-  getCoords(place: string) {
+  getCoords(place: string, params: any) {
     return this.http
       .get(
-        `https://api.mapbox.com/geocoding/v5/mapbox.places/${place}.json?proximity=ip&types=country`
+        `https://api.mapbox.com/geocoding/v5/mapbox.places/${place}.json?proximity=ip`,
+        { params: params }
       )
       .pipe(debounce(() => timer(10000)));
   }

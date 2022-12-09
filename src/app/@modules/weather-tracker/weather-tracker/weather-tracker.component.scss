@@ -53,14 +53,19 @@ img{
 .forecastBox{
 width:230px;
 padding: 20px;
+text-align: center;
    border:1px solid gray
 }
 }
 @media screen and (max-width:768px){
+  
     .container-fluid{
         height:auto !important;
       h2{
         font-size: 1.4em;
+      }
+      .currentWeatherDetails{
+        justify-content: flex-start;
       }
       h4{
         font-size: 1em;

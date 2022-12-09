@@ -11,6 +11,7 @@ import {
 import { debounceTime } from 'rxjs/operators';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { HttpParams } from '@angular/common/http';
 
 export interface stateInterface {
   country: string;
@@ -31,8 +32,10 @@ export class MapPageComponent implements OnInit {
   lat: number = 52.673858;
   lng: number = 7.815982;
   getCoords(val: string) {
+    let params = new HttpParams();
+    params = params.append('types', 'country');
     this.getCoordService
-      .getCoords(val)
+      .getCoords(val, params)
 
       .subscribe((res: any) => {
         this.coordDetails = res.features.filter(
@@ -42,7 +45,7 @@ export class MapPageComponent implements OnInit {
               this.lng = resp?.center[0];
               setTimeout(() => {
                 this.spinner.hide();
-              }, 1000);
+              }, 2000);
             }
           }
         );
